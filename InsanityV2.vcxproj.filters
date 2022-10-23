@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="wnd">
+      <UniqueIdentifier>{c3daac6d-2ca9-4adf-b541-860a8b33576a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="d3d9">
+      <UniqueIdentifier>{d17bf1e0-8a6b-4833-8599-7ed27570fd8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Options">
+      <UniqueIdentifier>{4e198c4f-33bb-4fa7-b775-3c245f30ddfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenCV">
+      <UniqueIdentifier>{5e8a0389-040d-43a6-8f19-c7f0adc15708}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wnd.cpp">
+      <Filter>wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="d3d.cpp">
+      <Filter>d3d9</Filter>
+    </ClCompile>
+    <ClCompile Include="option.cpp">
+      <Filter>Options</Filter>
+    </ClCompile>
+    <ClCompile Include="ocv .cpp">
+      <Filter>OpenCV</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wnd.h">
+      <Filter>wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="d3d.h">
+      <Filter>d3d9</Filter>
+    </ClInclude>
+    <ClInclude Include="option.h">
+      <Filter>Options</Filter>
+    </ClInclude>
+    <ClInclude Include="ocv.h">
+      <Filter>OpenCV</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
