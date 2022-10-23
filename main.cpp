@@ -52,10 +52,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
             option->bVisible = !option->bVisible;
         }  
 
-        if (GetAsyncKeyState(VK_F1) & 1)
-        {
-            //Mat src = ocv->captureScreenMat(window->hWnd);
-            //imwrite("Screenshot.png", src);
+        if (GetAsyncKeyState(VK_F2) & 1)
+        {            
+            ocv->src = ocv->captureScreenMat(window->hwndDesktop);
+            imwrite("Screenshot.png", ocv->src);            
         }
 
         // Render frame and ImGui

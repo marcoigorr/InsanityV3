@@ -3,6 +3,7 @@
 class wnd
 {
 public:
+	HWND hwndDesktop;
 	HWND hWnd; // Handle for the window
 
 	// if GetDesktopResolution fails then uses these default values
@@ -14,6 +15,7 @@ public:
 
 	wnd()
 	{
+		hwndDesktop = GetDesktopWindow();
 		GetDesktopResolution(SCREEN_WIDTH, SCREEN_HEIGHT);
 	}
 };

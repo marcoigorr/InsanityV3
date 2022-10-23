@@ -21,8 +21,10 @@ BITMAPINFOHEADER OpnCV::createBitmapHeader(int width, int height)
 	return bi;
 }
 
-void OpnCV::captureScreenMat(HWND hwnd)
+Mat OpnCV::captureScreenMat(HWND hwnd)
 {
+	Mat src;
+
 	// Get handle to a device context (DC)
 	HDC hwindowDC = GetDC(hwnd);
 	HDC hwindowCompatibleDC = CreateCompatibleDC(hwindowDC);
@@ -51,6 +53,8 @@ void OpnCV::captureScreenMat(HWND hwnd)
 	DeleteObject(hbwindow);
 	DeleteDC(hwindowCompatibleDC);
 	ReleaseDC(hwnd, hwindowCompatibleDC);
+
+	return src;
 }
 
 OpnCV* ocv = new OpnCV();

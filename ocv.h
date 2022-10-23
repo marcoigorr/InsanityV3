@@ -6,7 +6,7 @@ public:
 	Mat src;
 
 	BITMAPINFOHEADER createBitmapHeader(int width, int height);
-	void captureScreenMat(HWND hwnd);
+	Mat captureScreenMat(HWND hwnd);
 };
 
 extern OpnCV* ocv;
