@@ -53,9 +53,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         }  
 
         if (GetAsyncKeyState(VK_F2) & 1)
-        {            
+        {        
+            // Get Screenshot
             ocv->src = ocv->captureScreenMat(window->hwndDesktop);
-            imwrite("Screenshot.png", ocv->src);            
+            imwrite("Screenshot.png", ocv->src);
+
+            // Convert to text with OCR
+            const size_t len = 4096;
+            wchar_t buffer[len] = { 0 };
+            std::string image_path = "Screenshot.png";
+            size_t size = aspose::ocr::page_all(image_path.c_str(), buffer, len, true);
+            std::wcout << buffer << L"\n";
         }
 
         // Render frame and ImGui

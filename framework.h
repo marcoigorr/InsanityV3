@@ -10,6 +10,8 @@
 #include <opencv2/opencv.hpp>
 using namespace cv;
 
+#include <aspose_ocr.h>
+
 #include <TlHelp32.h>
 #include <Psapi.h>
 
