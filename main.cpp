@@ -34,6 +34,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     MSG msg;
 
+    // OCR info
+    std::string image_path = "Screenshot.png";
+
+    const size_t len = 4096;
+
     // Main loop
     while (!(GetAsyncKeyState(VK_HOME)))
     {
@@ -48,24 +53,37 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
             break;
 
         // Insert for hide/unhide text
-        if (GetAsyncKeyState(VK_INSERT) & 1)
+        if (GetAsyncKeyState(VK_F3) & 1)
         {
             option->bVisible = !option->bVisible;
         }  
 
-        if (GetAsyncKeyState(VK_F2) & 1)
-        {        
-            // Get Screenshot
+        if (GetAsyncKeyState(VK_INSERT) & 1)
+        {      
+            wchar_t output[len] = { 0 };
+
+            // Get Screenshot  
             ocv->src = ocv->captureScreenMat(window->hwndDesktop);
             imwrite("Screenshot.png", ocv->src);
 
-            // Get text from image
-            std::string image_path = "Screenshot.png";
+            int cont = 0;
 
-            const size_t len = 4096;
-            wchar_t buffer[len] = { 0 };
+            int x = 100, y = 50, w = 1920, h = 200;
+            for (uint i = y; i <= 1050; i += 200)
+            {
+                wchar_t buffer[len] = { 0 };
 
-            size_t size = aspose::ocr::page(image_path.c_str(), buffer, len);
+                // Get text from image
+                size_t size = aspose::ocr::page_rect_abc(image_path.c_str(), buffer, len, x, y, w, i, 
+                    L" !\",#$%&()*+,-./0123456789:;<=>?@[\\]_`{|}"
+                    "~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
+
+                for (int j = 0; j < len; j++)
+                {
+                    output[cont] += buffer[j];
+                    cont++;
+                }
+            }            
         }
 
         // Render frame and ImGui
