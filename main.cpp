@@ -6,6 +6,7 @@
 
 #include "option.h"
 
+
 LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
@@ -58,12 +59,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
             ocv->src = ocv->captureScreenMat(window->hwndDesktop);
             imwrite("Screenshot.png", ocv->src);
 
-            // Convert to text with OCR
+            // Get text from image
+            std::string image_path = "Screenshot.png";
+
             const size_t len = 4096;
             wchar_t buffer[len] = { 0 };
-            std::string image_path = "Screenshot.png";
-            size_t size = aspose::ocr::page_all(image_path.c_str(), buffer, len, true);
-            std::wcout << buffer << L"\n";
+
+            size_t size = aspose::ocr::page(image_path.c_str(), buffer, len);
         }
 
         // Render frame and ImGui
