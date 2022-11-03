@@ -13,8 +13,10 @@
 #include <opencv2/opencv.hpp>
 using namespace cv;
 
-// OCR
-#include <aspose_ocr.h>
+// OCR - character recognition
+#include <tesseract/baseapi.h>
+#include <leptonica/allheaders.h>
+#pragma comment (lib, "ws2_32.lib")
 
 // DirectX
 #include <d3d9.h>

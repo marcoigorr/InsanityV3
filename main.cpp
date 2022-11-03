@@ -34,11 +34,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     MSG msg;
 
-    // OCR info
-    std::string image_path = "Screenshot.png";
-
-    const size_t len = 4096;
-
     // Main loop
     while (!(GetAsyncKeyState(VK_HOME)))
     {
@@ -60,33 +55,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
         if (GetAsyncKeyState(VK_INSERT) & 1)
         {      
-            wchar_t output[len] = { 0 };
-
             // Get Screenshot  
             ocv->src = ocv->captureScreenMat(window->hwndDesktop);
             imwrite("Screenshot.png", ocv->src);
 
-            int cont = 0;
-
-            int x = 100, y = 50, w = 1920, h = 200;
-            for (uint i = y; i <= 1050; i += 200)
-            {
-                wchar_t buffer[len] = { 0 };
-
-                // Get text from image
-                size_t size = aspose::ocr::page_rect_abc(image_path.c_str(), buffer, len, x, y, w, i, 
-                    L" !\",#$%&()*+,-./0123456789:;<=>?@[\\]_`{|}"
-                    "~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
-
-                for (int j = 0; j < len; j++)
-                {
-                    output[cont] += buffer[j];
-                    cont++;
-                }
-            }            
         }
 
-        // Render frame and ImGui
+        // Render frame and ImGui 
         d3d9->renderFrame();
     }
 
