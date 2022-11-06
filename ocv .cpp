@@ -1,5 +1,6 @@
 #include "framework.h"
 #include "ocv.h"
+using namespace cv;
 
 #include "wnd.h"
 

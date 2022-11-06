@@ -56,7 +56,4 @@
       <Filter>OpenCV</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)..\..\runtimes\win-x64\native\onnxruntime.dll" />
-  </ItemGroup>
 </Project>

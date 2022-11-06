@@ -11,7 +11,7 @@ public:
 	void renderFrame(void);
 	void cleanD3D(void);
 
-	void drawText(char* label, int x, int y, int a, int r, int g, int b);
+	void drawText(const char* label, int x, int y, int a, int r, int g, int b);
 };
 
 extern Direct3D* d3d9;

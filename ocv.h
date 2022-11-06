@@ -3,10 +3,10 @@
 class OpnCV {
 public:
 	BITMAPINFOHEADER bi;
-	Mat src;
+	cv::Mat src;
 
 	BITMAPINFOHEADER createBitmapHeader(int width, int height);
-	Mat captureScreenMat(HWND hwnd);
+	cv::Mat captureScreenMat(HWND hwnd);
 };
 
 extern OpnCV* ocv;

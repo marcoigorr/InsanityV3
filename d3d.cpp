@@ -45,10 +45,8 @@ void Direct3D::renderFrame(void)
 
     /* 3D rendering on the back buffer here */
 
-    if (option->bVisible) {
-
-        drawText((char*)"ExOverlay - marcoigorr", window->SCREEN_WIDTH - 300, (window->SCREEN_HEIGHT / 2) - 100, 255, 255, 255, 255);
-    }
+    if (option->bVisible)
+        drawText(option->text, window->SCREEN_WIDTH - 300, (window->SCREEN_HEIGHT / 2) - 100, 255, 255, 255, 255);
 
     // End d3d scene
     d3ddev->EndScene();
@@ -63,7 +61,7 @@ void Direct3D::cleanD3D(void)
     d3d->Release();
 }
 
-void Direct3D::drawText(char* label, int x, int y, int a, int r, int g, int b)
+void Direct3D::drawText(const char* label, int x, int y, int a, int r, int g, int b)
 {
     RECT rect;
     rect.top = y;

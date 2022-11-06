@@ -11,7 +11,6 @@
 
 // OpenCV
 #include <opencv2/opencv.hpp>
-using namespace cv;
 
 // OCR - character recognition
 #include <tesseract/baseapi.h>
