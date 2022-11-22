@@ -5,6 +5,7 @@
 #include "ocv.h"
 
 #include "option.h"
+#include "resource.h"
 
 
 LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -83,7 +84,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
             cv::Mat im = cv::imread("Screenshot.png", cv::IMREAD_COLOR);
 
             ocr->SetImage(im.data, im.cols, im.rows, 3, im.step);
-            option->text = ocr->GetUTF8Text();
+            const char* detectedText = ocr->GetUTF8Text();
+
+            answer->setAnswer(detectedText);
         }
 
         // Render frame and ImGui 

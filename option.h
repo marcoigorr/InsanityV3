@@ -3,8 +3,7 @@
 class Option
 {
 public:
-	const char* text = "";
-	bool bVisible = false;
+	bool bVisible = true;
 	bool bIconVisible = true;
 };
 
