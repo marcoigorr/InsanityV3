@@ -47,9 +47,9 @@ void Direct3D::renderFrame(void)
 
     /* 3D rendering on the back buffer here */
 
-    if (option->bVisible)
+    if (option->bVisible && answer->_answer != "")
     {
-        drawText(answer->_answer, 300, (window->SCREEN_HEIGHT / 2) - 100, 255, 255, 255, 255);
+        drawText(answer->_answer.c_str(), 300, (window->SCREEN_HEIGHT / 2) - 100, 255, 255, 255, 255);
     }       
 
     // End d3d scene

@@ -4,16 +4,16 @@
 class Question
 {
 public:
-	std::vector<const char*> vQuestions = { "What is the purpose of the OSI physical layer" };
+	std::vector<const char*> vQuestions = { "During a routine inspection" };
 };
 
 class Answer
 {
 public:
-	const char* _answer = "No answer or question found";
+	std::string _answer;
 	void setAnswer(const char* detectedText);
 
-	std::vector<const char*> vAnswers = { "transmitting bits across the local media" };
+	std::vector<std::string> vAnswers = { "spyware" };
 };
 
 

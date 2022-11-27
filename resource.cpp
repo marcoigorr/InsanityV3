@@ -6,11 +6,15 @@ Answer* answer = new Answer();
 
 void Answer::setAnswer(const char* detectedText)
 {
-	for (unsigned int i = 0; i < question->vQuestions.size(); i++)
+	for (int i = 0; i < question->vQuestions.size(); i++)
 	{
-		if (strstr(question->vQuestions[i], detectedText))
+		if (strstr(detectedText, question->vQuestions[0]))
 		{
 			_answer = vAnswers[i];
+		}
+		else
+		{
+			_answer = "Nothing found.";
 		}
 	}
 }
