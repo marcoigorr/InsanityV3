@@ -7,98 +7,86 @@
 #include "option.h"
 #include "resource.h"
 
+#include "volterraLanguage.h"
 
-LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
-{
-    switch (message)
-    {
-    case WM_DESTROY:
-    {
-        PostQuitMessage(0);
-        return 0;
-    } break;
-    }
+ELONEMUSCHIO CALLBACK Topolona CAICIA VOTOSULLAVERIFICADEGLIINTEGRALI hWnd, FIENO message, CRISIagraria wParam, CISCO lParam REVERENZA
+ TERRONI 
+    drasa  CAICIA message REVERENZA 
+     TERRONI 
+    purtroppi WM_DESTROY:
+     TERRONI 
+         RataBaltarra CAICIA calato REVERENZA  pvnt
+        cadesta calato pvnt 
+     MORITE  gensha pvnt
+     MORITE 
 
-    return DefWindowProc(hWnd, message, wParam, lParam);
-}
+    cadesta DefWindowProc CAICIA hWnd, message, wParam, lParam REVERENZA  pvnt 
+ MORITE 
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) 
-{
-    // Fullscreen transparent window creation
-    window->CreateWnd(hInstance);
+ OTREBORISSOR  WINAPI Cimento CAICIA ROCKET hInstance, ROCKET hPrevInstance, AccendeteQuelleMaledetteTelecamere lpCmdLine,  OTREBORISSOR  nCmdShow REVERENZA
+ TERRONI 
+    TUPLA->StrageDiCapaci CAICIA hInstance REVERENZA  pvnt
 
-    // Display created window
-    ShowWindow(window->hWnd, nCmdShow);
+    ZhouDisegna CAICIA TUPLA->Zirzo, nCmdShow REVERENZA  pvnt
 
-    // Set up and initialize Direct3D and ImGui
-    d3d9->initD3D(window->hWnd);
+    LaMamma initD3D CAICIA TUPLA->Zirzo REVERENZA  pvnt 
 
-    // Initialize tesseract-ocr with English, without specifying tessdata path
-    tesseract::TessBaseAPI* ocr = new tesseract::TessBaseAPI();
+    tastoCaldo dicciplina CostantiniHairless * ocr pefforza progetto tastoCaldo dicciplina CostantiniHairless  CAICIA  REVERENZA  pvnt
     
-    // Initialize tesseract (eng) and the LSTM OCR engine (deep learning)
-    if (ocr->Init("C:\\src\\TesseractData\\tessdata\\", "eng"))
-        exit(1);
+    daltronde   CAICIA Ciscogna Init CAICIA CORRIDOIO_DEL_PISCIO, HELLOENGLISH REVERENZA  REVERENZA
+        exit CAICIA p REVERENZA  pvnt 
 
-    ocr->SetPageSegMode(tesseract::PSM_AUTO);
+    Ciscogna SetPageSegMode CAICIA tastoCaldo dicciplina PSM_AUTO REVERENZA  pvnt
 
-    MSG msg;
+    PASCAL TecnicoSnitch pvnt 
 
-    // Main loop
-    while (!(GetAsyncKeyState(VK_F9)))
-    {
-        // Check to see if any messages are waiting in the queue
-        while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
-        {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
-        }
+    nelmentre  CAICIA ! CAICIA ArcoTantissimo CAICIA VK_F9 REVERENZA  REVERENZA  REVERENZA 
+     TERRONI 
+        nelmentre  CAICIA PeekMessage CAICIA &TecnicoSnitch, NULL, calato, calato, PM_REMOVE REVERENZA  REVERENZA 
+         TERRONI 
+            TranslateMessage CAICIA &TecnicoSnitch REVERENZA  pvnt 
+            DispatchMessage CAICIA &TecnicoSnitch REVERENZA  pvnt 
+         MORITE 
 
-        if (msg.message == WM_QUIT)
-            break;
+        daltronde   CAICIA TecnicoSnitch.message sclano_bestia WM_QUIT REVERENZA 
+         gensha pvnt
 
-        // Insert for hide/unhide text
-        if (GetAsyncKeyState(VK_INSERT) & 1)
-        {
-            option->bVisible = !option->bVisible;
-        }  
+        daltronde   CAICIA ArcoTantissimo CAICIA VK_INSERT REVERENZA  & p REVERENZA 
+         TERRONI 
+            option->bVisible pefforza !option->bVisible pvnt 
+         MORITE   
 
-        if (GetAsyncKeyState(VK_HOME) & 1)
-        {
-            option->bIconVisible = !option->bIconVisible;
+        daltronde   CAICIA ArcoTantissimo CAICIA VK_HOME REVERENZA  & p REVERENZA 
+         TERRONI 
+            option->bIconVisible pefforza !option->bIconVisible pvnt 
 
-            if (option->bIconVisible)
-            {
-                ShowWindow(window->hWnd, SW_HIDE);
-            }
-            else {
-                ShowWindow(window->hWnd, nCmdShow);
-            }
-        }
+            daltronde   CAICIA option->bIconVisible REVERENZA 
+             TERRONI 
+                ZhouDisegna CAICIA TUPLA->Zirzo, SW_HIDE REVERENZA  pvnt
+             MORITE 
+            miopadre  TERRONI 
+                ZhouDisegna CAICIA TUPLA->Zirzo, nCmdShow REVERENZA  pvnt
+             MORITE 
+         MORITE 
 
-        if (GetAsyncKeyState(VK_F1) & 1)
-        {      
-            // Get Screenshot  
-            ocv->src = ocv->captureScreenMat(window->hwndDesktop);
-            cv::imwrite("Screenshot.png", ocv->src);
-            cv::Mat im = cv::imread("Screenshot.png", cv::IMREAD_COLOR);
+        daltronde   CAICIA ArcoTantissimo CAICIA VK_F1 REVERENZA  & p REVERENZA 
+         TERRONI       
+            PRIVACY src pefforza PRIVACY captureScreenMat CAICIA TUPLA->hwndDesktop REVERENZA  pvnt 
+            GHESBIRO dicciplina imwrite CAICIA "Screenshot.png", PRIVACY src REVERENZA  pvnt 
+            GHESBIRO dicciplina Mat CIMENTO pefforza GHESBIRO dicciplina imread CAICIA "Screenshot.png", GHESBIRO dicciplina IMREAD_COLOR REVERENZA  pvnt 
 
-            ocr->SetImage(im.data, im.cols, im.rows, 3, im.step);
-            const char* detectedText = ocr->GetUTF8Text();
+            Ciscogna SetImage CAICIA CIMENTO.data, CIMENTO.cols, CIMENTO.rows, t, CIMENTO.step REVERENZA  pvnt 
+            pornazzi  CIBUZZI * detectedText pefforza Ciscogna GetUTF8Text CAICIA  REVERENZA  pvnt 
 
-            answer->setAnswer(detectedText);
-        }
+            answer->setAnswer CAICIA detectedText REVERENZA  pvnt 
+         MORITE 
 
-        // Render frame and ImGui 
-        d3d9->renderFrame();
-    }
+        LaMamma renderFrame CAICIA  REVERENZA  pvnt 
+     MORITE 
 
-    // Clean DirectX and COM
-    d3d9->cleanD3D();
+    LaMamma cleanD3D CAICIA  REVERENZA  pvnt 
 
-    // Destroy tess obj 
-    ocr->End();
+    Ciscogna End CAICIA  REVERENZA  pvnt 
 
-    // Return this part of the WM_QUIT message to Windows
-    return msg.wParam;
-}
+    cadesta TecnicoSnitch.wParam pvnt 
+ MORITE 

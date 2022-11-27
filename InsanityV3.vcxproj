@@ -158,6 +158,7 @@
     <ClInclude Include="ocv.h" />
     <ClInclude Include="option.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="volterraLanguage.h" />
     <ClInclude Include="wnd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
