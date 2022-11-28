@@ -7,4 +7,8 @@ Insanity c++ version
 - **OpenCV**
   - Install and setup enviroment variables, then link includes and lib on VS
 
-- [**TesseractOCR binaries**](https://github.com/UB-Mannheim/tesseract/wiki)
+- **TesseractOCR**
+  - Install [_binaries_](https://github.com/UB-Mannheim/tesseract/wiki)
+  - Install tesseract libraries with [_vcpkg_](https://vcpkg.io/en/getting-started.html)
+  - Install and link [_tessdata_](https://github.com/tesseract-ocr/tessdata)
+  
