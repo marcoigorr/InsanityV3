@@ -21,6 +21,9 @@
     <Filter Include="OpenCV">
       <UniqueIdentifier>{5e8a0389-040d-43a6-8f19-c7f0adc15708}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{fc5cdd30-2a20-4840-9f5f-d059eac61b5a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -38,6 +41,9 @@
     <ClCompile Include="ocv .cpp">
       <Filter>OpenCV</Filter>
     </ClCompile>
+    <ClCompile Include="resource.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -54,6 +60,9 @@
     </ClInclude>
     <ClInclude Include="ocv.h">
       <Filter>OpenCV</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,6 +4,8 @@
 #include "wnd.h"
 #include "option.h"
 
+#include "resource.h"
+
 void Direct3D::initD3D(HWND hWnd)
 {
     // Create Direct3D interface
@@ -45,8 +47,10 @@ void Direct3D::renderFrame(void)
 
     /* 3D rendering on the back buffer here */
 
-    if (option->bVisible)
-        drawText(option->text, window->SCREEN_WIDTH - 300, (window->SCREEN_HEIGHT / 2) - 100, 255, 255, 255, 255);
+    if (option->bVisible && answer->_answer != "")
+    {
+        drawText(answer->_answer.c_str(), 300, (window->SCREEN_HEIGHT / 2) - 100, 255, 255, 255, 255);
+    }       
 
     // End d3d scene
     d3ddev->EndScene();

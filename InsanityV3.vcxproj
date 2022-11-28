@@ -149,6 +149,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ocv .cpp" />
     <ClCompile Include="option.cpp" />
+    <ClCompile Include="resource.cpp" />
     <ClCompile Include="wnd.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +157,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="ocv.h" />
     <ClInclude Include="option.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="wnd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
