@@ -3,6 +3,7 @@
 Insanity c++ version
 
 ## Build requirements
+- **DirectX9**
 
 - **OpenCV**
   - Install and setup enviroment variables, then link includes and lib on VS
